@@ -60,15 +60,19 @@
 	</build>
 
 	<distributionManagement>
-    <snapshotRepository>
-      <id>nexusdeploymentrepo</id>
-      <url>http://3.82.109.108:8081/repository/maven-snapshots/</url> <!-- Update the IP/Address to Your Nexus VM IP -->
-    </snapshotRepository>											  <!-- Mmake sure to create the "maven-snapshots" repo in Nexus -->
-	<repository>
-	  <id>nexusdeploymentrepo</id>
-      <url>http://3.82.109.108:8081/repository/maven-releases/</url> <!-- Update the IP/Address to Your Nexus VM IP -->
-    </repository>													 <!-- Also make sure you have the above two or one repositories created -->
-  
+		
+    	  <repository>
+	      <id>nexus</id>
+	      <name>mvn-sonar-proj2-Release Nexus Repository</name>
+	      <url>http://54.91.148.117:8081/repository/mvn-sonar-proj2-Release/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>mvn-sonar-proj2-Snapshot Nexus Repository</name>
+	      <url>http://54.91.148.117:8081/repository/mvn-sonar-proj2-Snapshot/</url>
+	    </snapshotRepository>
+	    
   </distributionManagement>
 
 </project>
