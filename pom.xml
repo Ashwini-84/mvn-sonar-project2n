@@ -15,7 +15,15 @@
 	<description>JavaWebApp project for Spring Boot</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>5.1.2.RELEASE</spring.version>
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<sonar.host.url>http://3.85.164.84:9000/</sonar.host.url>
+		<sonar.login>squ_4e9b6b11594f74a78ffd80515c264a4df969c8c3</sonar.login>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
 	</properties>
 
 	<dependencies>
