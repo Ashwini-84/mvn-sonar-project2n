@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
+		<groupId>org.springframework.boot</groupIdhttps://github.com/Ashwini-84/mvn-sonar-project2n/edit/main/pom.xml>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
@@ -71,16 +71,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-		    <plugin
+		    	<!--WAR Plugin -->
+            <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
            </plugin>
-
-			<!--WAR Plugin -->
+                 <!-- Compiler Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
+				<artifactId>maven-Compiler-plugin</artifactId>
 				<version>3.3</version>
 				<configuration>
 					<source>${jdk.version}</source>
