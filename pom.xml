@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>JavaWebApp</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>JavaWebApp</name>
 	<description>JavaWebApp project for Spring Boot</description>
@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://3.85.164.84:9000/</sonar.host.url>
+		<sonar.host.url>http://13.222.38.153:9000/</sonar.host.url>
 		<sonar.login>squ_4e9b6b11594f74a78ffd80515c264a4df969c8c3</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -66,15 +66,60 @@
     	  <repository>
 	      <id>nexus</id>
 	      <name>mvn-sonar-proj2-Release Nexus Repository</name>
-	      <url>http://54.91.148.117:8081/repository/mvn-sonar-proj2-Release/</url>
+	      <url>http://44.205.251.10:8081/repository/mvn-sonar-proj2-Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>mvn-sonar-proj2-Snapshot Nexus Repository</name>
-	      <url>http://54.91.148.117:8081/repository/mvn-sonar-proj2-Snapshot/</url>
+	      <url>http://44.205.251.10:8081/repository/mvn-sonar-proj2-Snapshot/</url>
 	    </snapshotRepository>
 	    
   </distributionManagement>
+	<build>
+		<finalName>maven-web-application</finalName>
+		
+		<plugins>
+			<plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-war-plugin</artifactId>
+                            <version>3.3.2</version>
+                        </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.11.v20150529</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/maven-web-application</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<wtpContextName>JavaWebApp</wtpContextName>
+				</configuration>
+			</plugin>
+			
+</plugins>
+	</build>
 
 </project>
